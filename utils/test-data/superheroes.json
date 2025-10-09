@@ -1,0 +1,34 @@
+[
+  {
+    "superhero": "Black Widow\n              black-widow@avengers.com",
+    "realName": "Natasha Alianovna Romanova"
+  },
+  {
+    "superhero": "Doctor Strange\n              doctor-strange@avengers.com",
+    "realName": "Stephen Vincent Strange"
+  },
+  {
+    "superhero": "Captain America\n              captain-america@avengers.com",
+    "realName": "Steve Rogers"
+  },
+  {
+    "superhero": "Iron Man\n              iron-man@avengers.com",
+    "realName": "Anthony 'Tony' Stark"
+  },
+  {
+    "superhero": "Ant-Man\n              ant-man@avengers.com",
+    "realName": "Eric O'Grady"
+  },
+  {
+    "superhero": "Hulk\n              hulk@avengers.com",
+    "realName": "Robert Bruce Banner"
+  },
+  {
+    "superhero": "Spider-Man\n              spider-man@avengers.com",
+    "realName": "Peter Parker"
+  },
+  {
+    "superhero": "Deadpool\n              deadpool@avengers.com",
+    "realName": "Wade Wilson"
+  }
+]
