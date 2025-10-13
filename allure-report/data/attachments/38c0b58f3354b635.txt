@@ -1,2 +1,0 @@
-File selected successfully.
-File upload and simulated removal validated successfully.
