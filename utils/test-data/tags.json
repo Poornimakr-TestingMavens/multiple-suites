@@ -11,5 +11,9 @@
     "csharp",
     "go",
     "ruby"
-  ]
+  ],
+  "rightContext": {
+    "mainMenu": ["Preview", "Get Link", "Rename", "Delete", "Settings"],
+    "shareSubMenu": ["Twitter", "Instagram", "Dribble", "Telegram"]
+  }
 }

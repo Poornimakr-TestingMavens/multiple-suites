@@ -10,6 +10,9 @@ import { SortableListPage } from "../pages-QA/sortableList";
 import { rightContextPage } from "../pages/righContext";
 import { NewTabPage, PopUpPage, NestedIframePage } from "../pages-QA/popNewIframes";
 import { ShadowDOMPage, StarsRatingPage } from "../pages-QA/shadowAndRating";
+import { RedirectChainPage } from "../pages-QA/redirectChainPage";
+import { FetchDataPage } from "../pages-QA/fetchDataPage";
+import { ChangeableIframePage } from "../pages-QA/changeableIframePage";
 
 // Test Data
 import superheroes from "../utils/test-data/superheroes.json";
@@ -29,6 +32,9 @@ type MyFixtures = {
   nestedIframe: NestedIframePage;
   shadowDOM: ShadowDOMPage;
   starsRating: StarsRatingPage;
+  redirectChain: RedirectChainPage;
+  fetchData: FetchDataPage;
+  changeableIframe: ChangeableIframePage;
   superheroesData: typeof superheroes;
   tagsData: typeof tagsData;
 };
@@ -80,6 +86,18 @@ export const test = base.extend<MyFixtures>({
 
   starsRating: async ({ page }, use) => {
     await use(new StarsRatingPage(page));
+  },
+
+  redirectChain: async ({ page }, use) => {
+    await use(new RedirectChainPage(page));
+  },
+
+  fetchData: async ({ page }, use) => {
+    await use(new FetchDataPage(page));
+  },
+
+  changeableIframe: async ({ page }, use) => {
+    await use(new ChangeableIframePage(page));
   },
 
   superheroesData: async ({}, use) => {

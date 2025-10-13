@@ -1,0 +1,181 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - navigation [ref=e6]:
+      - generic [ref=e7]:
+        - link "PlayGround" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: PlayGround
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - link "Home" [ref=e13] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e14]:
+            - link "Shop" [ref=e15] [cursor=pointer]:
+              - /url: /shop
+          - listitem [ref=e16]:
+            - link "Components" [ref=e17] [cursor=pointer]:
+              - /url: /components
+          - listitem [ref=e18]:
+            - link "About" [ref=e19] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e20]:
+            - link "Contact" [ref=e21] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e22]:
+            - link "Journal" [ref=e23] [cursor=pointer]:
+              - /url: /journal
+          - listitem [ref=e24]:
+            - link "API" [ref=e25] [cursor=pointer]:
+              - /url: /apidoc
+          - generic [ref=e28]:
+            - log [ref=e30]
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - generic [ref=e34]: English
+                - combobox [ref=e37]
+              - img [ref=e41]
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - heading "Form Generator" [level=1] [ref=e45]
+        - paragraph [ref=e46]: Fill out the form and generate a PDF with all the information
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: Document Title
+          - textbox [ref=e50]: Personal Information Form
+        - generic [ref=e51]:
+          - heading "Personal Information" [level=3] [ref=e52]
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - generic [ref=e55]: Name
+              - textbox [ref=e56]
+            - generic [ref=e57]:
+              - generic [ref=e58]: Email
+              - textbox [ref=e59]
+            - generic [ref=e60]:
+              - generic [ref=e61]: Phone
+              - textbox [ref=e62]
+            - generic [ref=e63]:
+              - generic [ref=e64]: Address
+              - textbox [ref=e65]
+        - generic [ref=e66]:
+          - generic [ref=e67]: Gender
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - radio "Male" [ref=e70]
+              - text: Male
+            - generic [ref=e71]:
+              - radio "Female" [ref=e72]
+              - text: Female
+            - generic [ref=e73]:
+              - radio "Other" [ref=e74]
+              - text: Other
+        - generic [ref=e75]:
+          - generic [ref=e76]: Experience Level
+          - combobox [ref=e77]:
+            - option "Select experience" [selected]
+            - option "Beginner (0-1 years)"
+            - option "Intermediate (1-3 years)"
+            - option "Advanced (3-5 years)"
+            - option "Expert (5+ years)"
+        - generic [ref=e78]:
+          - generic [ref=e79]: Hobbies
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - checkbox "Reading" [ref=e82]
+              - text: Reading
+            - generic [ref=e83]:
+              - checkbox "Gaming" [ref=e84]
+              - text: Gaming
+            - generic [ref=e85]:
+              - checkbox "Sports" [ref=e86]
+              - text: Sports
+            - generic [ref=e87]:
+              - checkbox "Music" [ref=e88]
+              - text: Music
+            - generic [ref=e89]:
+              - checkbox "Travel" [ref=e90]
+              - text: Travel
+            - generic [ref=e91]:
+              - checkbox "Cooking" [ref=e92]
+              - text: Cooking
+        - generic [ref=e93]:
+          - generic [ref=e94]: Skills
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - checkbox "JavaScript" [ref=e97]
+              - text: JavaScript
+            - generic [ref=e98]:
+              - checkbox "React" [ref=e99]
+              - text: React
+            - generic [ref=e100]:
+              - checkbox "Node.js" [ref=e101]
+              - text: Node.js
+            - generic [ref=e102]:
+              - checkbox "Python" [ref=e103]
+              - text: Python
+            - generic [ref=e104]:
+              - checkbox "Java" [ref=e105]
+              - text: Java
+            - generic [ref=e106]:
+              - checkbox "C++" [ref=e107]
+              - text: C++
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - checkbox "I agree to the terms and conditions" [ref=e111]
+            - text: I agree to the terms and conditions
+          - generic [ref=e112]:
+            - checkbox "Subscribe to newsletter" [ref=e113]
+            - text: Subscribe to newsletter
+        - generic [ref=e114]:
+          - generic [ref=e115]: Comments
+          - textbox "Any additional comments..." [ref=e116]
+        - generic [ref=e117]:
+          - heading "Items Table" [level=3] [ref=e118]
+          - generic [ref=e120]:
+            - textbox "Item name" [ref=e121]
+            - spinbutton [ref=e122]: "1"
+            - spinbutton [ref=e123]
+            - button "Add Item" [ref=e124] [cursor=pointer]
+          - table [ref=e126]:
+            - rowgroup [ref=e127]:
+              - row "Item Quantity Price Total Actions" [ref=e128]:
+                - cell "Item" [ref=e129]
+                - cell "Quantity" [ref=e130]
+                - cell "Price" [ref=e131]
+                - cell "Total" [ref=e132]
+                - cell "Actions" [ref=e133]
+            - rowgroup [ref=e134]:
+              - row "Laptop 1 999.99 $999.99 🗑️" [ref=e135]:
+                - cell "Laptop" [ref=e136]:
+                  - textbox [ref=e137]: Laptop
+                - cell "1" [ref=e138]:
+                  - spinbutton [ref=e139]: "1"
+                - cell "999.99" [ref=e140]:
+                  - spinbutton [ref=e141]: "999.99"
+                - cell "$999.99" [ref=e142]
+                - cell "🗑️" [ref=e143]:
+                  - button "🗑️" [ref=e144] [cursor=pointer]
+              - row "Mouse 2 25.99 $51.98 🗑️" [ref=e145]:
+                - cell "Mouse" [ref=e146]:
+                  - textbox [ref=e147]: Mouse
+                - cell "2" [ref=e148]:
+                  - spinbutton [ref=e149]: "2"
+                - cell "25.99" [ref=e150]:
+                  - spinbutton [ref=e151]: "25.99"
+                - cell "$51.98" [ref=e152]
+                - cell "🗑️" [ref=e153]:
+                  - button "🗑️" [ref=e154] [cursor=pointer]
+              - 'row "Total: $1051.97" [ref=e155]':
+                - cell "Total:" [ref=e156]
+                - cell "$1051.97" [ref=e157]
+                - cell [ref=e158]
+        - generic [ref=e159]:
+          - button "📊 Export to Excel" [ref=e160] [cursor=pointer]
+          - button "📄 Export to CSV" [ref=e161] [cursor=pointer]
+          - link "📄 Generate PDF" [ref=e162] [cursor=pointer]:
+            - /url: blob:https://www.playground.testingmavens.tools/c5d88a02-8a8d-45d9-975d-7fa3cd7ac523
+  - img [ref=e165]
+```

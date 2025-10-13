@@ -13,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  testMatch: 'windowsandframes.spec.ts',
+  testMatch: 'miniWebApps.spec.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -32,11 +32,12 @@ export default defineConfig({
     useCucumberStepReporter: false,
     useStepsForHooks: false         // do not show hooks as steps
   }],
+  ['html', { outputFolder: 'playwright-report', open: 'never' }],
 ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+   // baseURL: 'https://www.playground.testingmavens.tools/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -48,19 +49,19 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-    //  name: 'chromium',
+      name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
-    // {
+    {
     //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+      use: { ...devices['Desktop Firefox'] },
+    },
 
-    // {
+     {
     //   name: 'webkit',
     //   use: { ...devices['Desktop Safari'] },
-    // },
+    },
 
     /* Test against mobile viewports. */
     // {
@@ -74,11 +75,11 @@ export default defineConfig({
 
     /* Test against branded browsers. */
     // {
-    //   name: 'Microsoft Edge',
+    // //  name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
     // },
     // {
-    //   name: 'Google Chrome',
+    // //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],

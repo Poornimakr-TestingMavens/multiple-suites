@@ -1,0 +1,7 @@
+{
+  "redirectPages": ["second", "third", "fourth", "fifth", "sixth", "last"],
+  "lastPageText": "Welcome to the Last Page",
+  "redirectSectionText": "Redirect Chain",
+  "startLinkText": "Start Redirection chain",
+  "goBackText": "Go Back"
+}

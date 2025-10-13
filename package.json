@@ -13,5 +13,10 @@
     "allure-playwright": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "pdf-parse": "^2.2.6",
+    "xlsx": "^0.18.5"
   }
 }
