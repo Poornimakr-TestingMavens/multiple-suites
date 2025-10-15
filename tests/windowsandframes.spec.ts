@@ -1,82 +1,51 @@
-import { test, expect } from "@playwright/test";
-import { AlertPage } from "../pages/alertPage";
-import { FileDownloadPage } from "../pages/filedwnld";
-import { DragAndDropPage } from "../pages/dragAndDrop";
-import { FileUploadPage } from "../pages/fileUpload";
-import fs from "fs";
-
+import { test, expect } from "../pages/pages-QA/fixtures";
 test.describe("Automation Demo Site Tests", () => {
-  let alertPage: AlertPage;
-  let filePage: FileDownloadPage;
-  let dragPage: DragAndDropPage;
-  let uploadPage: FileUploadPage;
-
   test.beforeEach(async ({ page }) => {
     await page.goto("https://demo.automationtesting.in/Windows.html");
-    alertPage = new AlertPage(page);
-    filePage = new FileDownloadPage(page);
-    dragPage = new DragAndDropPage(page);
-    uploadPage = new FileUploadPage(page);
   });
-  test("Verify handling of simple, confirm, and prompt alerts", async ({
-    page,
-  }) => {
-    //  await page.goto("https://demo.automationtesting.in/Windows.html");
+  test("Verify handling of simple, confirm, and prompt alerts", async ({ alertPage }) => {
     await alertPage.clickOnSwitchToButton();
     await alertPage.clickOnAlertsButton();
     const alertText = await alertPage.handleAlertBox();
-    expect(alertText).toBe("I am an alert box!");
+    expect(alertText, "Expected alert box text to be 'I am an alert box!'").toBe("I am an alert box!");
     const confirmDismissText = await alertPage.handleConfirmAlert(false);
-    expect(confirmDismissText).toContain("Press a Button");
-    const promptAcceptText = await alertPage.handlePromptAlert(
-      "Playwright",
-      true
-    );
-    expect(promptAcceptText).toBe("Please enter your name");
-    const promptDismissText = await alertPage.handlePromptAlert(
-      "Playwright",
-      false
-    );
-    expect(promptDismissText).toBe("Please enter your name");
+    expect(confirmDismissText, "Expected confirm alert dismiss message to contain 'Press a Button'").toContain("Press a Button");
+    const promptAcceptText = await alertPage.handlePromptAlert("Playwright", true);
+    expect(promptAcceptText, "Expected prompt alert accept message to be 'Please enter your name'").toBe("Please enter your name");
+    const promptDismissText = await alertPage.handlePromptAlert("Playwright", false);
+    expect(promptDismissText, "Expected prompt alert dismiss message to be 'Please enter your name'").toBe("Please enter your name");
   });
-  test("Verify that text file is generated, downloaded, and validated correctly", async ({
-    page,
-  }) => {
-    await filePage.navigateToFileDownload();
+  test("Verify that text file is generated, downloaded, and validated correctly", async ({ fileDownloadPage, fs }) => {
+    await fileDownloadPage.navigateToFileDownload();
     const sampleData = "Automation Test Data";
-    await filePage.enterText(sampleData);
-    await filePage.clickCreateButton();
-    const filePath = await filePage.downloadFile();
-    expect(filePage.fileExists(filePath)).toBeTruthy();
-    expect(filePath.endsWith(".txt")).toBeTruthy();
-    const content = filePage.readFile(filePath);
-    expect(content.trim()).toBe(sampleData.trim());
+    await fileDownloadPage.enterText(sampleData);
+    await fileDownloadPage.clickCreateButton();
+    const filePath = await fileDownloadPage.downloadFile();
+    expect(fileDownloadPage.fileExists(filePath), `Expected file to exist at path: ${filePath}`).toBeTruthy();
+    expect(filePath.endsWith(".txt"), `Expected downloaded file to have '.txt' extension, got: ${filePath}`).toBeTruthy();
+    const content = fileDownloadPage.readFile(filePath);
+    expect(content.trim(), "Expected file content to match sample data").toBe(sampleData.trim());
     if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
   });
-  test("Verify drag and drop of Angular, Mongo, and Node images", async ({
-    page,
-  }) => {
-    await dragPage.navigateToDragAndDrop();
-    await dragPage.dragAngular();
-    await dragPage.dragMongo();
-    await dragPage.dragNode();
-    await expect(dragPage.targetBox.locator("#angular")).toBeVisible();
-    await expect(dragPage.targetBox.locator("#mongo")).toBeVisible();
-    await expect(dragPage.targetBox.locator("#node")).toBeVisible();
+  test("Verify drag and drop of Angular, Mongo, and Node images", async ({ dragAndDropPage }) => {
+    await dragAndDropPage.navigateToDragAndDrop();
+    await dragAndDropPage.dragAngular();
+    await dragAndDropPage.dragMongo();
+    await dragAndDropPage.dragNode();
+    await expect(dragAndDropPage.droppedAngular, "Expected Angular image to be visible after drag").toBeVisible();
+    await expect(dragAndDropPage.droppedMongo, "Expected Mongo image to be visible after drag").toBeVisible();
+    await expect(dragAndDropPage.droppedNode, "Expected Node image to be visible after drag").toBeVisible();
   });
-
-  // FILE UPLOAD TESTS
-  test("Verify file upload and removal functionality", async ({ page }) => {
-    const uploadPage = new FileUploadPage(page);
-    await uploadPage.navigateToFileUpload();
+  test("Verify file upload and removal functionality", async ({ fileUploadPage }) => {
+    await fileUploadPage.navigateToFileUpload();
     const fileName = "sample.png";
-    await uploadPage.uploadFile(fileName);
-    expect(await uploadPage.isFileUploaded(fileName)).toBeTruthy();
-    await uploadPage.uploadButton.click();
-    expect(await uploadPage.isFileUploaded(fileName)).toBeTruthy();
-    await uploadPage.fileInput.setInputFiles([]);
-    const isCleared = await uploadPage.fileInput.inputValue();
-    expect(isCleared).toBe("");
+    await fileUploadPage.uploadFile(fileName);
+    expect(await fileUploadPage.isFileUploaded(fileName), `Expected file '${fileName}' to be uploaded`).toBeTruthy();
+    await fileUploadPage.uploadButton.click();
+    expect(await fileUploadPage.isFileUploaded(fileName), `Expected file '${fileName}' to remain uploaded after clicking upload button`).toBeTruthy();
+    await fileUploadPage.fileInput.setInputFiles([]);
+    const isCleared = await fileUploadPage.fileInput.inputValue();
+    expect(isCleared, "Expected file input to be cleared after removing files").toBe("");
     console.log("File upload and simulated removal validated successfully.");
   });
 });

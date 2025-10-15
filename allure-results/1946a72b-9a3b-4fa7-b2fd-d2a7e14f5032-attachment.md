@@ -1,0 +1,116 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - navigation [ref=e6]:
+      - generic [ref=e7]:
+        - link "PlayGround" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: PlayGround
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - link "Home" [ref=e13] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e14]:
+            - link "Shop" [ref=e15] [cursor=pointer]:
+              - /url: /shop
+          - listitem [ref=e16]:
+            - link "Components" [ref=e17] [cursor=pointer]:
+              - /url: /components
+          - listitem [ref=e18]:
+            - link "About" [ref=e19] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e20]:
+            - link "Contact" [ref=e21] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e22]:
+            - link "Journal" [ref=e23] [cursor=pointer]:
+              - /url: /journal
+          - listitem [ref=e24]:
+            - link "API" [ref=e25] [cursor=pointer]:
+              - /url: /apidoc
+          - generic [ref=e28]:
+            - log [ref=e30]
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - generic [ref=e34]: English
+                - combobox [ref=e37]
+              - img [ref=e41]
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - heading "Static Table with Export" [level=1] [ref=e45]
+        - paragraph [ref=e46]: Employee data table with export functionality to Excel, CSV, and PDF
+      - generic [ref=e47]:
+        - button "📊 Export to Excel" [ref=e48] [cursor=pointer]
+        - button "📄 Export to CSV" [ref=e49] [cursor=pointer]
+        - link "📋 Export to PDF" [ref=e50] [cursor=pointer]:
+          - /url: blob:https://www.playground.testingmavens.tools/6dab01ee-f9b4-4e7a-afd1-ef89cc256b8d
+      - table [ref=e53]:
+        - rowgroup [ref=e54]:
+          - row "ID Name Email Role Department Salary" [ref=e55]:
+            - cell "ID" [ref=e56]
+            - cell "Name" [ref=e57]
+            - cell "Email" [ref=e58]
+            - cell "Role" [ref=e59]
+            - cell "Department" [ref=e60]
+            - cell "Salary" [ref=e61]
+        - rowgroup [ref=e62]:
+          - row "1 John Doe john@example.com Manager Sales $75,000" [ref=e63]:
+            - cell "1" [ref=e64]
+            - cell "John Doe" [ref=e65]
+            - cell "john@example.com" [ref=e66]
+            - cell "Manager" [ref=e67]
+            - cell "Sales" [ref=e68]
+            - cell "$75,000" [ref=e69]
+          - row "2 Jane Smith jane@example.com Developer IT $85,000" [ref=e70]:
+            - cell "2" [ref=e71]
+            - cell "Jane Smith" [ref=e72]
+            - cell "jane@example.com" [ref=e73]
+            - cell "Developer" [ref=e74]
+            - cell "IT" [ref=e75]
+            - cell "$85,000" [ref=e76]
+          - row "3 Mike Johnson mike@example.com Designer Marketing $65,000" [ref=e77]:
+            - cell "3" [ref=e78]
+            - cell "Mike Johnson" [ref=e79]
+            - cell "mike@example.com" [ref=e80]
+            - cell "Designer" [ref=e81]
+            - cell "Marketing" [ref=e82]
+            - cell "$65,000" [ref=e83]
+          - row "4 Sarah Wilson sarah@example.com Analyst Finance $70,000" [ref=e84]:
+            - cell "4" [ref=e85]
+            - cell "Sarah Wilson" [ref=e86]
+            - cell "sarah@example.com" [ref=e87]
+            - cell "Analyst" [ref=e88]
+            - cell "Finance" [ref=e89]
+            - cell "$70,000" [ref=e90]
+          - row "5 David Brown david@example.com Team Lead IT $90,000" [ref=e91]:
+            - cell "5" [ref=e92]
+            - cell "David Brown" [ref=e93]
+            - cell "david@example.com" [ref=e94]
+            - cell "Team Lead" [ref=e95]
+            - cell "IT" [ref=e96]
+            - cell "$90,000" [ref=e97]
+          - row "6 Lisa Davis lisa@example.com Coordinator HR $55,000" [ref=e98]:
+            - cell "6" [ref=e99]
+            - cell "Lisa Davis" [ref=e100]
+            - cell "lisa@example.com" [ref=e101]
+            - cell "Coordinator" [ref=e102]
+            - cell "HR" [ref=e103]
+            - cell "$55,000" [ref=e104]
+          - row "7 Tom Wilson tom@example.com Specialist Operations $68,000" [ref=e105]:
+            - cell "7" [ref=e106]
+            - cell "Tom Wilson" [ref=e107]
+            - cell "tom@example.com" [ref=e108]
+            - cell "Specialist" [ref=e109]
+            - cell "Operations" [ref=e110]
+            - cell "$68,000" [ref=e111]
+          - row "8 Amy Chen amy@example.com Senior Dev IT $95,000" [ref=e112]:
+            - cell "8" [ref=e113]
+            - cell "Amy Chen" [ref=e114]
+            - cell "amy@example.com" [ref=e115]
+            - cell "Senior Dev" [ref=e116]
+            - cell "IT" [ref=e117]
+            - cell "$95,000" [ref=e118]
+  - img [ref=e121]
+```
