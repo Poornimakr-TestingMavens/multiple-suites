@@ -1,4 +1,4 @@
-import { test, expect } from "../pages/pages-QA/fixtures";
+import { test, expect } from "../pages/pages-QA-playground/fixtures";
 
 test.describe("Sony WH-1000XM4 Image Consistency Validation", () => {
   test("Validate Sony WH-1000XM4 image across Product, Shop, and Cart pages", async ({

@@ -1,4 +1,4 @@
-import { test, expect } from "../pages/pages-QA/fixtures";
+import { test, expect } from "../pages/pages-QA-playground/fixtures";
 
 test.describe("Playground + Screener Validations", () => {
   test("Playground + Screener Combined Flow", async ({

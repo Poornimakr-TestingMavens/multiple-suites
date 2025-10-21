@@ -1,4 +1,4 @@
-import { test, expect } from "../pages/pages-QA/fixtures";
+import { test, expect } from "../pages/pages-QA-playground/fixtures";
 
 test.describe("Dynamic Table Export - Button Color Validations", () => {
   test("Verify button colors", async ({ shopPage, testData }) => {

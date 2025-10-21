@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from "@playwright/test";
-import { BasePage } from "../pages-QA/basePage";
+import { BasePage } from "../pages-QA-playground/basePage";
 
 /**
  * Handles Screener registration and YOPmail email verification.

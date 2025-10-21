@@ -26,7 +26,7 @@ export default defineConfig({
   reporter: [
   ['list'],
   ['allure-playwright', {
-    outputFolder: 'allure-results',
+    outputFolder: '.artifacts/allure-results',
     detail: false,                 // less verbose
     suiteTitle: false,               // show suite title in report
     useCucumberStepReporter: false,

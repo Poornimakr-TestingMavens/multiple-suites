@@ -1,4 +1,4 @@
-import { test, expect } from "../pages/pages-QA/fixtures";
+import { test, expect } from "../pages/pages-QA-playground/fixtures";
 
 test.describe("Automation Demo Site Tests", () => {
   test.beforeEach(async ({ page }) => {
@@ -60,7 +60,6 @@ test.describe("Automation Demo Site Tests", () => {
     await test.step("Verify file upload and removal functionality", async () => {
       await fileUploadPage.navigateToFileUpload();
       const fileName = "sample.png";
-
       await fileUploadPage.uploadFile(fileName);
       expect(await fileUploadPage.isFileUploaded(fileName), `Expected file '${fileName}' to be uploaded`).toBeTruthy();
 

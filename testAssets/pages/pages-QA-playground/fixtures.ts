@@ -11,22 +11,22 @@ import { ShadowDOMPage, StarsRatingPage } from "./shadowAndRating";
 import { RedirectChainPage } from "./redirectChainPage";
 import { FetchDataPage } from "./fetchDataPage";
 import { BasePage } from "./basePage";
-import RegisterPage from "../pages-pdf/emailValidation";
-import DynamicTableExportPage from "../pages-pdf/dynamicTable";
-import StaticTablePage from "../pages-pdf/statictable";
-import { AlertPage } from "../alertPage";
-import { FileDownloadPage } from "../fileDwnld";
-import { DragAndDropPage } from "../dragAndDrop";
-import { FileUploadPage } from "../fileUpload";
-import { ProductPage } from "../pages-pdf/productPage";
+import RegisterPage from "../pages-pdf-validations-in-playwright/emailValidation";
+import DynamicTableExportPage from "../pages-pdf-validations-in-playwright/dynamicTable";
+import StaticTablePage from "../pages-pdf-validations-in-playwright/statictable";
+import { AlertPage } from "../pages-windowsAndFrames/alertPage";
+import { FileDownloadPage } from "../pages-windowsAndFrames/fileDwnld";
+import { DragAndDropPage } from "../pages-windowsAndFrames/dragAndDrop";
+import { FileUploadPage } from "../pages-windowsAndFrames/fileUpload";
+import { ProductPage } from "../pages-pdf-validations-in-playwright/productPage";
 
-import ShopPage from "../pages-pdf/shopPage";
+import ShopPage from "../pages-pdf-validations-in-playwright/shopPage";
 import * as fs from "fs";
 import * as path from "path";
 import * as XLSX from "xlsx";
-import superheroes from "../../utils/test-data/superheroes.json";
-import tagsData from "../../utils/test-data/tags.json";
-import testData from "../../utils/test-data/testData.json" assert { type: "json" };
+import superheroes from "../../testdata/test-data-for-playground/superheroes.json";
+import tagsData from "../../testdata/test-data-for-playground/tags.json";
+import testData from "../../testdata/test-data-for-playground/testData.json" assert { type: "json" };
 type MyFixtures = {
   // --- Web Apps ---
   basePage: BasePage;

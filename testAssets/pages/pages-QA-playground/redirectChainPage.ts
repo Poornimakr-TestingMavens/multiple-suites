@@ -1,5 +1,5 @@
 import { Page, Locator } from "@playwright/test";
-import redirectData from "../../utils/test-data/redirectChain.json";
+import redirectData from "../../testdata/test-data-for-playground/redirectChain.json";
 
 /**
  * Page Object for Redirect Chain page

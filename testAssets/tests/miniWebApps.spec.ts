@@ -1,4 +1,4 @@
-import { test, expect } from "../pages/pages-QA/fixtures";
+import { test, expect } from "../pages/pages-QA-playground/fixtures";
 
 test.describe("Mini Web Apps - Verify different elements on the website", () => {
   test.beforeEach(async ({ page, BASE_URL }) => {
