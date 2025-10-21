@@ -14,6 +14,12 @@
       "category": "Electronics",
       "price": "1200",
       "stock": "10"
+    },
+    "buttonColors": {
+      "addRow": "rgb(22, 163, 74)",
+      "exportExcel": "rgb(22, 163, 74)",
+      "exportCsv": "rgb(37, 99, 235)",
+      "exportPdf": "rgb(220, 38, 38)"
     }
   },
   "staticTable": {

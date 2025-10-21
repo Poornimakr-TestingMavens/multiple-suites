@@ -1,0 +1,3 @@
+✅ Product image is visible on Product Page
+C:\Projects\playground-review\INTERN_ASSESSMENT\tests\ImageValidations.spec.ts-snapshots\wh1000xm4-product-win32.png is re-generated, writing actual.
+📸 Product Page image snapshot validated

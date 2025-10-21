@@ -1,0 +1,130 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - navigation [ref=e6]:
+      - generic [ref=e7]:
+        - link "PlayGround" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: PlayGround
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - link "Home" [ref=e13] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e14]:
+            - link "Shop" [ref=e15] [cursor=pointer]:
+              - /url: /shop
+          - listitem [ref=e16]:
+            - link "Components" [ref=e17] [cursor=pointer]:
+              - /url: /components
+          - listitem [ref=e18]:
+            - link "About" [ref=e19] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e20]:
+            - link "Contact" [ref=e21] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e22]:
+            - link "Journal" [ref=e23] [cursor=pointer]:
+              - /url: /journal
+          - listitem [ref=e24]:
+            - link "API" [ref=e25] [cursor=pointer]:
+              - /url: /apidoc
+          - generic [ref=e28]:
+            - log [ref=e30]
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - generic [ref=e34]: English
+                - combobox [ref=e37]
+              - img [ref=e41]
+    - generic [ref=e43]:
+      - generic [ref=e46]:
+        - generic [ref=e48] [cursor=pointer]:
+          - img [ref=e49]
+          - paragraph [ref=e51]: Shop by Category
+        - generic [ref=e52]:
+          - textbox "Search your products here" [ref=e53]
+          - img [ref=e54]
+        - generic [ref=e56] [cursor=pointer]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - img [ref=e61]
+          - link "0" [ref=e63]:
+            - /url: /cart
+            - generic [ref=e64]:
+              - img [ref=e65]
+              - generic [ref=e67]: "0"
+      - link "Buy Now" [active] [ref=e69] [cursor=pointer]:
+        - /url: /cart
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - img [ref=e72]
+            - img [ref=e74]
+          - paragraph [ref=e76]: Buy Now
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - heading "Cart" [level=1] [ref=e79]
+          - paragraph [ref=e80]:
+            - img [ref=e82]
+            - generic [ref=e84]: cart
+        - generic [ref=e85]:
+          - img "emptyCart" [ref=e87]
+          - generic [ref=e88]:
+            - heading "Your Cart feels lonely." [level=1] [ref=e89]
+            - paragraph [ref=e90]: Your Shopping cart lives to serve. Give it purpose - fill it with books, electronics, videos, etc. and make it happy.
+            - link "Continue Shopping" [ref=e91] [cursor=pointer]:
+              - /url: /shop
+              - button "Continue Shopping" [ref=e92]
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - heading "More about PlayGround" [level=3] [ref=e96]
+          - generic [ref=e97]:
+            - paragraph [ref=e98]: Sign up for our newsletter to receive updates and news.
+            - list [ref=e99]:
+              - link [ref=e100] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e101]:
+                  - img [ref=e102]
+              - link [ref=e104] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e105]:
+                  - img [ref=e106]
+              - link [ref=e108] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e109]:
+                  - img [ref=e110]
+              - link [ref=e112] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e113]:
+                  - img [ref=e114]
+        - generic [ref=e116]:
+          - heading "Shop" [level=3] [ref=e117]
+          - list [ref=e118]:
+            - listitem [ref=e119] [cursor=pointer]: Accesories
+            - listitem [ref=e120] [cursor=pointer]: Clothes
+            - listitem [ref=e121] [cursor=pointer]: Electronics
+            - listitem [ref=e122] [cursor=pointer]: Home appliances
+            - listitem [ref=e123] [cursor=pointer]: New Arrivals
+        - generic [ref=e124]:
+          - heading "Your account" [level=3] [ref=e125]
+          - list [ref=e126]:
+            - listitem [ref=e127] [cursor=pointer]: Profile
+            - listitem [ref=e128] [cursor=pointer]: Orders
+            - listitem [ref=e129] [cursor=pointer]: Addresses
+            - listitem [ref=e130] [cursor=pointer]: Account Details
+            - listitem [ref=e131] [cursor=pointer]: Payment Options
+        - generic [ref=e132]:
+          - heading "Subscribe to our newsletter." [level=3] [ref=e133]
+          - generic [ref=e134]:
+            - paragraph [ref=e135]: Sign up for our newsletter to receive updates and news.
+            - generic [ref=e136]:
+              - textbox "Insert your email ...*" [ref=e138]
+              - button "Subscribe" [ref=e139] [cursor=pointer]
+            - img "/assets/payment-BAywfhtf.png" [ref=e140]
+      - paragraph [ref=e143]:
+        - img [ref=e145]
+        - text: Copyright 2024 | PlayGround | All Rights Reserved |
+        - link "Powered by Testing Mavens" [ref=e147] [cursor=pointer]:
+          - /url: https://www.testingmavens.com/
+  - img [ref=e150]
+```

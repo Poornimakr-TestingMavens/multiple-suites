@@ -1,0 +1,3 @@
+✅ Product image is visible on Shop Page
+A snapshot doesn't exist at C:\Projects\playground-review\INTERN_ASSESSMENT\tests\ImageValidations.spec.ts-snapshots\wh1000xm4-shop-win32.png, writing actual.
+📸 Shop Page image snapshot validated

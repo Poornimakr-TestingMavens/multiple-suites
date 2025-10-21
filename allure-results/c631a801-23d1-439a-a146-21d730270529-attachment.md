@@ -1,0 +1,301 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - navigation [ref=e6]:
+      - generic [ref=e7]:
+        - link "PlayGround" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: PlayGround
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - link "Home" [ref=e13] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e14]:
+            - link "Shop" [ref=e15] [cursor=pointer]:
+              - /url: /shop
+          - listitem [ref=e16]:
+            - link "Components" [ref=e17] [cursor=pointer]:
+              - /url: /components
+          - listitem [ref=e18]:
+            - link "About" [ref=e19] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e20]:
+            - link "Contact" [ref=e21] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e22]:
+            - link "Journal" [ref=e23] [cursor=pointer]:
+              - /url: /journal
+          - listitem [ref=e24]:
+            - link "API" [ref=e25] [cursor=pointer]:
+              - /url: /apidoc
+          - generic [ref=e28]:
+            - log [ref=e30]
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - generic [ref=e34]: English
+                - combobox [ref=e37]
+              - img [ref=e41]
+    - generic [ref=e43]:
+      - generic [ref=e46]:
+        - generic [ref=e48] [cursor=pointer]:
+          - img [ref=e49]
+          - paragraph [ref=e51]: Shop by Category
+        - generic [ref=e52]:
+          - textbox "Search your products here" [ref=e53]
+          - img [ref=e54]
+        - generic [ref=e56] [cursor=pointer]:
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - img [ref=e61]
+          - link "0" [ref=e63]:
+            - /url: /cart
+            - generic [ref=e64]:
+              - img [ref=e65]
+              - generic [ref=e67]: "0"
+      - link "Buy Now" [ref=e69] [cursor=pointer]:
+        - /url: /cart
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - img [ref=e72]
+            - img [ref=e74]
+          - paragraph [ref=e76]: Buy Now
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - heading "Products" [level=1] [ref=e79]
+          - paragraph [ref=e80]:
+            - img [ref=e82]
+            - generic [ref=e84]: shop
+        - generic [ref=e85]:
+          - generic [ref=e87]:
+            - generic [ref=e90] [cursor=pointer]:
+              - generic [ref=e91]: Shop by Category
+              - img [ref=e92]
+            - generic [ref=e96] [cursor=pointer]:
+              - generic [ref=e97]: Shop by Brand
+              - img [ref=e98]
+            - generic [ref=e102] [cursor=pointer]:
+              - generic [ref=e103]: Shop by Color
+              - img [ref=e104]
+            - generic [ref=e107] [cursor=pointer]:
+              - generic [ref=e108]: Shop by Price
+              - img [ref=e109]
+          - generic [ref=e111]:
+            - generic [ref=e114]:
+              - generic [ref=e115]: "Show:"
+              - combobox [ref=e116] [cursor=pointer]:
+                - option "12" [selected]
+                - option "24"
+                - option "36"
+                - option "48"
+              - img [ref=e118]
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - generic [ref=e122]:
+                  - button [ref=e123] [cursor=pointer]:
+                    - img [ref=e124]
+                  - button [ref=e126] [cursor=pointer]:
+                    - img [ref=e127]
+                - paragraph [ref=e129]: Products from 1 to 10 of 10
+              - generic [ref=e130]:
+                - generic [ref=e132]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/f8bcb8f6-dd9b-4d98-a37e-849abee148c1-headset1.webp" [ref=e134]
+                  - generic [ref=e135]:
+                    - generic [ref=e136]:
+                      - heading "Sony WH-1000XM4" [level=2] [ref=e137]
+                      - paragraph [ref=e138]: Black
+                      - paragraph [ref=e139]: $349.99
+                    - generic [ref=e140]:
+                      - button "Add to Cart" [ref=e141] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e142]
+                      - button "Wish List" [ref=e144] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e145]
+                - generic [ref=e148]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/842a6478-e38b-4563-9774-45d0fba0b693-headset2.jpeg" [ref=e150]
+                  - generic [ref=e151]:
+                    - generic [ref=e152]:
+                      - heading "Bose QuietComfort 45" [level=2] [ref=e153]
+                      - paragraph [ref=e154]: Silver
+                      - paragraph [ref=e155]: $329.95
+                    - generic [ref=e156]:
+                      - button "Add to Cart" [ref=e157] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e158]
+                      - button "Wish List" [ref=e160] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e161]
+                - generic [ref=e164]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/41ff15c2-a0c1-472e-9abc-7c5cf4d90fb7-headset3.webp" [ref=e166]
+                  - generic [ref=e167]:
+                    - generic [ref=e168]:
+                      - heading "Sennheiser Momentum 3 Wireless" [level=2] [ref=e169]
+                      - paragraph [ref=e170]: Sandy White
+                      - paragraph [ref=e171]: $399.95
+                    - generic [ref=e172]:
+                      - button "Add to Cart" [ref=e173] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e174]
+                      - button "Wish List" [ref=e176] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e177]
+                - generic [ref=e180]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/57ad85cc-c903-4475-99e6-0546ba4aea77-headset4.jpeg" [ref=e182]
+                  - generic [ref=e183]:
+                    - generic [ref=e184]:
+                      - heading "Jabra Elite 85h" [level=2] [ref=e185]
+                      - paragraph [ref=e186]: Navy
+                      - paragraph [ref=e187]: $249.99
+                    - generic [ref=e188]:
+                      - button "Add to Cart" [ref=e189] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e190]
+                      - button "Wish List" [ref=e192] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e193]
+                - generic [ref=e196]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/76eb2e4f-14e6-4a2c-8a69-0e246949e9d0-headset5.jpeg" [ref=e198]
+                  - generic [ref=e199]:
+                    - generic [ref=e200]:
+                      - heading "Beats Studio Buds" [level=2] [ref=e201]
+                      - paragraph [ref=e202]: Beats Red
+                      - paragraph [ref=e203]: $149.99
+                    - generic [ref=e204]:
+                      - button "Add to Cart" [ref=e205] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e206]
+                      - button "Wish List" [ref=e208] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e209]
+                - generic [ref=e212]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/8789c3ea-3086-4d69-889c-90cbe7f6e603-headset6.webp" [ref=e214]
+                  - generic [ref=e215]:
+                    - generic [ref=e216]:
+                      - heading "Audio-Technica ATH-M50xBT" [level=2] [ref=e217]
+                      - paragraph [ref=e218]: Black
+                      - paragraph [ref=e219]: $199
+                    - generic [ref=e220]:
+                      - button "Add to Cart" [ref=e221] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e222]
+                      - button "Wish List" [ref=e224] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e225]
+                - generic [ref=e228]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/fd49ea6f-fe70-4019-9714-26b8dc00e23a-headset7.webp" [ref=e230]
+                  - generic [ref=e231]:
+                    - generic [ref=e232]:
+                      - heading "SteelSeries Arctis 9" [level=2] [ref=e233]
+                      - paragraph [ref=e234]: Black
+                      - paragraph [ref=e235]: $199.99
+                    - generic [ref=e236]:
+                      - button "Add to Cart" [ref=e237] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e238]
+                      - button "Wish List" [ref=e240] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e241]
+                - generic [ref=e244]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/101515ae-edbb-47f1-8702-7b221f5463bb-headset8.jpeg" [ref=e246]
+                  - generic [ref=e247]:
+                    - generic [ref=e248]:
+                      - heading "Razer BlackShark V2 Pro" [level=2] [ref=e249]
+                      - paragraph [ref=e250]: Black
+                      - paragraph [ref=e251]: $179.99
+                    - generic [ref=e252]:
+                      - button "Add to Cart" [ref=e253] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e254]
+                      - button "Wish List" [ref=e256] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e257]
+                - generic [ref=e260]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/c783fba1-4e05-408c-ba70-89dd02bec9dd-headset9.jpeg" [ref=e262]
+                  - generic [ref=e263]:
+                    - generic [ref=e264]:
+                      - heading "HyperX Cloud II Wireless" [level=2] [ref=e265]
+                      - paragraph [ref=e266]: Red
+                      - paragraph [ref=e267]: $149.99
+                    - generic [ref=e268]:
+                      - button "Add to Cart" [ref=e269] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e270]
+                      - button "Wish List" [ref=e272] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e273]
+                - generic [ref=e276]:
+                  - img "https://testingmavens-web.s3.eu-north-1.amazonaws.com/MavenStore/1f960dad-bbe8-4f14-971b-9fa47ed38d86-headset10.webp" [ref=e278]
+                  - generic [ref=e279]:
+                    - generic [ref=e280]:
+                      - heading "Corsair Virtuoso RGB Wireless XT" [level=2] [ref=e281]
+                      - paragraph [ref=e282]: White
+                      - paragraph [ref=e283]: $269.99
+                    - generic [ref=e284]:
+                      - button "Add to Cart" [ref=e285] [cursor=pointer]:
+                        - text: Add to Cart
+                        - img [ref=e286]
+                      - button "Wish List" [ref=e288] [cursor=pointer]:
+                        - text: Wish List
+                        - img [ref=e289]
+              - navigation "Pagination" [ref=e292]:
+                - listitem:
+                  - button "Previous page" [disabled]
+                - listitem [ref=e293]:
+                  - button "Page 1 is your current page" [ref=e294] [cursor=pointer]: "1"
+                - listitem:
+                  - button "Next page" [disabled]
+      - generic [ref=e296]:
+        - generic [ref=e297]:
+          - heading "More about PlayGround" [level=3] [ref=e298]
+          - generic [ref=e299]:
+            - paragraph [ref=e300]: Sign up for our newsletter to receive updates and news.
+            - list [ref=e301]:
+              - link [ref=e302] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e303]:
+                  - img [ref=e304]
+              - link [ref=e306] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e307]:
+                  - img [ref=e308]
+              - link [ref=e310] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e311]:
+                  - img [ref=e312]
+              - link [ref=e314] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e315]:
+                  - img [ref=e316]
+        - generic [ref=e318]:
+          - heading "Shop" [level=3] [ref=e319]
+          - list [ref=e320]:
+            - listitem [ref=e321] [cursor=pointer]: Accesories
+            - listitem [ref=e322] [cursor=pointer]: Clothes
+            - listitem [ref=e323] [cursor=pointer]: Electronics
+            - listitem [ref=e324] [cursor=pointer]: Home appliances
+            - listitem [ref=e325] [cursor=pointer]: New Arrivals
+        - generic [ref=e326]:
+          - heading "Your account" [level=3] [ref=e327]
+          - list [ref=e328]:
+            - listitem [ref=e329] [cursor=pointer]: Profile
+            - listitem [ref=e330] [cursor=pointer]: Orders
+            - listitem [ref=e331] [cursor=pointer]: Addresses
+            - listitem [ref=e332] [cursor=pointer]: Account Details
+            - listitem [ref=e333] [cursor=pointer]: Payment Options
+        - generic [ref=e334]:
+          - heading "Subscribe to our newsletter." [level=3] [ref=e335]
+          - generic [ref=e336]:
+            - paragraph [ref=e337]: Sign up for our newsletter to receive updates and news.
+            - generic [ref=e338]:
+              - textbox "Insert your email ...*" [ref=e340]
+              - button "Subscribe" [ref=e341] [cursor=pointer]
+            - img "/assets/payment-BAywfhtf.png" [ref=e342]
+      - paragraph [ref=e345]:
+        - img [ref=e347]
+        - text: Copyright 2024 | PlayGround | All Rights Reserved |
+        - link "Powered by Testing Mavens" [ref=e349] [cursor=pointer]:
+          - /url: https://www.testingmavens.com/
+  - img [ref=e352]
+```

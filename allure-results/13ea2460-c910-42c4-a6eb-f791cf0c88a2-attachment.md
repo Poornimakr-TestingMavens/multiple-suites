@@ -1,0 +1,163 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]:
+        - img [ref=e9]
+        - generic [ref=e11]: Added Succesfully!
+      - button "close" [ref=e12]:
+        - img [ref=e13]
+      - generic [ref=e15]:
+        - progressbar "notification timer"
+    - navigation [ref=e18]:
+      - generic [ref=e19]:
+        - link "PlayGround" [ref=e20] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e21]: PlayGround
+        - list [ref=e23]:
+          - listitem [ref=e24]:
+            - link "Home" [ref=e25] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e26]:
+            - link "Shop" [ref=e27] [cursor=pointer]:
+              - /url: /shop
+          - listitem [ref=e28]:
+            - link "Components" [ref=e29] [cursor=pointer]:
+              - /url: /components
+          - listitem [ref=e30]:
+            - link "About" [ref=e31] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e32]:
+            - link "Contact" [ref=e33] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e34]:
+            - link "Journal" [ref=e35] [cursor=pointer]:
+              - /url: /journal
+          - listitem [ref=e36]:
+            - link "API" [ref=e37] [cursor=pointer]:
+              - /url: /apidoc
+          - generic [ref=e40]:
+            - log [ref=e42]
+            - generic [ref=e43]:
+              - generic [ref=e44]:
+                - generic [ref=e46]: English
+                - combobox [ref=e49]
+              - img [ref=e53]
+    - generic [ref=e55]:
+      - generic [ref=e58]:
+        - generic [ref=e60] [cursor=pointer]:
+          - img [ref=e61]
+          - paragraph [ref=e63]: Shop by Category
+        - generic [ref=e64]:
+          - textbox "Search your products here" [ref=e65]
+          - img [ref=e66]
+        - generic [ref=e68] [cursor=pointer]:
+          - generic [ref=e70]:
+            - img [ref=e71]
+            - img [ref=e73]
+          - link "1" [ref=e75]:
+            - /url: /cart
+            - generic [ref=e76]:
+              - img [ref=e77]
+              - generic [ref=e79]: "1"
+      - link "Buy Now 1" [active] [ref=e81] [cursor=pointer]:
+        - /url: /cart
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - img [ref=e84]
+            - img [ref=e86]
+          - paragraph [ref=e88]: Buy Now
+          - paragraph [ref=e89]: "1"
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Cart" [level=1] [ref=e92]
+          - paragraph [ref=e93]:
+            - img [ref=e95]
+            - generic [ref=e97]: cart
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - heading "Product" [level=2] [ref=e100]
+            - heading "Price" [level=2] [ref=e101]
+            - heading "Quantity" [level=2] [ref=e102]
+            - heading "Sub Total" [level=2] [ref=e103]
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - img [ref=e108] [cursor=pointer]
+              - img "productImage" [ref=e110]
+              - heading "Bose QuietComfort 45" [level=1] [ref=e111]
+            - generic [ref=e112]:
+              - generic [ref=e113]: $329.95
+              - generic [ref=e114]:
+                - generic [ref=e115] [cursor=pointer]: "-"
+                - paragraph [ref=e116]: "1"
+                - generic [ref=e117] [cursor=pointer]: +
+              - paragraph [ref=e119]: $329.95
+          - button "Reset cart" [ref=e120] [cursor=pointer]
+          - generic [ref=e122]:
+            - heading "Cart totals" [level=1] [ref=e123]
+            - generic [ref=e124]:
+              - paragraph [ref=e125]:
+                - text: Subtotal
+                - generic [ref=e126]: $329.95
+              - paragraph [ref=e127]:
+                - text: Shipping Charge
+                - generic [ref=e128]: $25
+              - paragraph [ref=e129]:
+                - text: Total
+                - generic [ref=e130]: $354.95
+            - button "Proceed to Checkout" [ref=e132] [cursor=pointer]
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - heading "More about PlayGround" [level=3] [ref=e136]
+          - generic [ref=e137]:
+            - paragraph [ref=e138]: Sign up for our newsletter to receive updates and news.
+            - list [ref=e139]:
+              - link [ref=e140] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e141]:
+                  - img [ref=e142]
+              - link [ref=e144] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e145]:
+                  - img [ref=e146]
+              - link [ref=e148] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e149]:
+                  - img [ref=e150]
+              - link [ref=e152] [cursor=pointer]:
+                - /url: /
+                - listitem [ref=e153]:
+                  - img [ref=e154]
+        - generic [ref=e156]:
+          - heading "Shop" [level=3] [ref=e157]
+          - list [ref=e158]:
+            - listitem [ref=e159] [cursor=pointer]: Accesories
+            - listitem [ref=e160] [cursor=pointer]: Clothes
+            - listitem [ref=e161] [cursor=pointer]: Electronics
+            - listitem [ref=e162] [cursor=pointer]: Home appliances
+            - listitem [ref=e163] [cursor=pointer]: New Arrivals
+        - generic [ref=e164]:
+          - heading "Your account" [level=3] [ref=e165]
+          - list [ref=e166]:
+            - listitem [ref=e167] [cursor=pointer]: Profile
+            - listitem [ref=e168] [cursor=pointer]: Orders
+            - listitem [ref=e169] [cursor=pointer]: Addresses
+            - listitem [ref=e170] [cursor=pointer]: Account Details
+            - listitem [ref=e171] [cursor=pointer]: Payment Options
+        - generic [ref=e172]:
+          - heading "Subscribe to our newsletter." [level=3] [ref=e173]
+          - generic [ref=e174]:
+            - paragraph [ref=e175]: Sign up for our newsletter to receive updates and news.
+            - generic [ref=e176]:
+              - textbox "Insert your email ...*" [ref=e178]
+              - button "Subscribe" [ref=e179] [cursor=pointer]
+            - img "/assets/payment-BAywfhtf.png" [ref=e180]
+      - paragraph [ref=e183]:
+        - img [ref=e185]
+        - text: Copyright 2024 | PlayGround | All Rights Reserved |
+        - link "Powered by Testing Mavens" [ref=e187] [cursor=pointer]:
+          - /url: https://www.testingmavens.com/
+  - img [ref=e190]
+```

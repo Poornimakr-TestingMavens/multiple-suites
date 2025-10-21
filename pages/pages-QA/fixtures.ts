@@ -18,6 +18,9 @@ import { AlertPage } from "../alertPage";
 import { FileDownloadPage } from "../fileDwnld";
 import { DragAndDropPage } from "../dragAndDrop";
 import { FileUploadPage } from "../fileUpload";
+import { ProductPage } from "../pages-pdf/productPage";
+
+import ShopPage from "../pages-pdf/shopPage";
 import * as fs from "fs";
 import * as path from "path";
 import * as XLSX from "xlsx";
@@ -46,6 +49,12 @@ type MyFixtures = {
   registerPage: RegisterPage;
   dynamicTableExport: DynamicTableExportPage;
   staticTablePage: StaticTablePage;
+    // --- PDF Pages ---
+
+  shopPage: ShopPage;
+  productPage: ProductPage;
+
+
 
   // --- Windows & Frames ---
   alertPage: AlertPage;
@@ -119,6 +128,8 @@ export const test = base.extend<MyFixtures>({
   SHADOW_DOM_EXPECTED_PROGRESS: async ({}, use) => await use("95"),
   VERIFY_ACCOUNT_CODE_POSITIVE: async ({}, use) => await use("999999"),
   VERIFY_ACCOUNT_CODE_NEGATIVE: async ({}, use) => await use("111111"),
+  shopPage: async ({ page }, use) => await use(new ShopPage(page)),
+  productPage: async ({ page }, use) => await use(new ProductPage(page)),
 });
 
 export { expect };
