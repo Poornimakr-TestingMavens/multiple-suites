@@ -6,6 +6,7 @@ import { Page, Locator } from "@playwright/test";
 export class BasePage {
   readonly page: Page;
   readonly changeableIframeSection: Locator;
+  readonly uploadFileSection: Locator;
 
   /**
    * Initializes the base page and locators.
@@ -14,6 +15,7 @@ export class BasePage {
   constructor(page: Page) {
     this.page = page;
     this.changeableIframeSection = page.locator('//h3[text()="Changeable Iframe"]');
+    this.uploadFileSection = page.locator('//h3[text()="Upload File"]');
   }
 
   /**
@@ -28,5 +30,12 @@ export class BasePage {
    */
   async goToChangeableIframe(): Promise<void> {
     await this.changeableIframeSection.click();
+  }
+
+  /**
+   * Clicks on the "Upload File" section.
+   */
+  async goToUploadFile(): Promise<void> {
+    await this.uploadFileSection.click();
   }
 }

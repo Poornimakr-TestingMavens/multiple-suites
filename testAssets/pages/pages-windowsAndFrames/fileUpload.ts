@@ -41,7 +41,7 @@ export class FileUploadPage {
    * @param fileName - The name of the file to upload.
    */
   async uploadFile(fileName: string) {
-    const filePath = path.resolve(__dirname, "../testdata", fileName);
+    const filePath = path.resolve(__dirname, "C:/Projects/playground-review/INTERN_ASSESSMENT/testAssets/testdata", fileName);
     await this.fileInput.setInputFiles(filePath);
   }
 

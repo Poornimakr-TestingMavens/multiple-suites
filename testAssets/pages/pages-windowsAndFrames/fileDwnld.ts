@@ -63,7 +63,7 @@ export class FileDownloadPage {
       this.downloadLink.click(),
     ]);
 
-    const filePath = path.resolve(
+    const filePath = path.join(
       __dirname,
       "..",
       "testdata",

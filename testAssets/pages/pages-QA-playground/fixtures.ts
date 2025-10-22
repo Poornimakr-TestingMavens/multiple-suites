@@ -19,6 +19,7 @@ import { FileDownloadPage } from "../pages-windowsAndFrames/fileDwnld";
 import { DragAndDropPage } from "../pages-windowsAndFrames/dragAndDrop";
 import { FileUploadPage } from "../pages-windowsAndFrames/fileUpload";
 import { ProductPage } from "../pages-pdf-validations-in-playwright/productPage";
+import { FileUploadForQaPlayground } from "./FileUploadForQaPlayground";
 
 import ShopPage from "../pages-pdf-validations-in-playwright/shopPage";
 import * as fs from "fs";
@@ -44,6 +45,8 @@ type MyFixtures = {
   starsRating: StarsRatingPage;
   redirectChain: RedirectChainPage;
   fetchData: FetchDataPage;
+  fileUploadForQaPlayground: FileUploadForQaPlayground;
+
 
   // --- PDF Pages ---
   registerPage: RegisterPage;
@@ -97,6 +100,7 @@ export const test = base.extend<MyFixtures>({
   starsRating: async ({ page }, use) => await use(new StarsRatingPage(page)),
   redirectChain: async ({ page }, use) => await use(new RedirectChainPage(page)),
   fetchData: async ({ page }, use) => await use(new FetchDataPage(page)),
+  fileUploadForQaPlayground: async ({ page }, use) => await use(new FileUploadForQaPlayground(page)),
 
   // --- PDF Pages ---
   registerPage: async ({ page, context }, use) => {

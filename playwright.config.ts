@@ -12,8 +12,8 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
- testMatch: 'imageValidations.spec.ts',
+  testDir: './testAssets/tests',
+  //testMatch: 'miniWebApps.spec.ts',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -41,7 +41,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
-    headless: false,
+    headless: true,
     screenshot: 'on',
     video: 'on',
   },

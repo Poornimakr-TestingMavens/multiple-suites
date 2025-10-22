@@ -1,5 +1,5 @@
 import { test, expect, Page, Locator } from "@playwright/test";
-import { NEW_TAB_PAGE_URL, NEW_TAB_PAGE_HEADER } from "../../utils/urls";
+import { NEW_TAB_PAGE_URL, NEW_TAB_PAGE_HEADER } from "../../../utils/urls";
 
 /**
  * Page Object Model for handling the "New Tab" page and related actions.

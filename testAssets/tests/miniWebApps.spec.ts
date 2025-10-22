@@ -29,7 +29,7 @@ test.describe("Mini Web Apps - Verify different elements on the website", () => 
       }
     });
   });
-  test.only("Verify Account: Positive", async ({
+  test("Verify Account: Positive", async ({
     verifyAccount,
     VERIFY_ACCOUNT_CODE_POSITIVE,
   }) => {
@@ -343,4 +343,23 @@ test.describe("Mini Web Apps - Verify different elements on the website", () => 
       ).toBeGreaterThan(0);
     });
   });
+  test.only("Upload image file and verify filename", async ({ fileUploadForQaPlayground }) => {
+  await test.step("Open QA Playground site", async () => {
+    await fileUploadForQaPlayground.openSite();
+  });
+
+  await test.step("Go to Upload File section", async () => {
+    await fileUploadForQaPlayground.goToUploadFile();
+  });
+
+  await test.step("Verify 'No File Selected' message", async () => {
+    await fileUploadForQaPlayground.expectNoFileSelected();
+  });
+
+  await test.step("Upload file and verify filename", async () => {
+    const uploadedFile = await fileUploadForQaPlayground.uploadFileAndReturnLocator();
+    await expect(uploadedFile, "Uploaded file not visible").toBeVisible();
+  });
+});
+
 });
