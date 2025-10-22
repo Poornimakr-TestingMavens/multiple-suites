@@ -1,5 +1,5 @@
 {
-  "name": "automation-filetesting",
+  "name": "practicetestingtasknew",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {},
@@ -12,12 +12,13 @@
     "@types/node": "^24.7.0",
     "allure-playwright": "^3.4.1",
     "allure-single-html-file-js": "^0.0.6",
-    "pdf-parse": "^2.3.0",
+    "pdf-parse": "^2.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "csv-parser": "^3.2.0",
+    "pdfreader": "^3.0.7",
     "xlsx": "^0.18.5"
   }
 }

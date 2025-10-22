@@ -343,7 +343,7 @@ test.describe("Mini Web Apps - Verify different elements on the website", () => 
       ).toBeGreaterThan(0);
     });
   });
-  test.only("Upload image file and verify filename", async ({ fileUploadForQaPlayground }) => {
+  test("Upload image file and verify filename", async ({ fileUploadForQaPlayground }) => {
   await test.step("Open QA Playground site", async () => {
     await fileUploadForQaPlayground.openSite();
   });

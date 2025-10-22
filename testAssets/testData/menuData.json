@@ -1,0 +1,4 @@
+{
+  "menuItems": ["Preview", "Get Link", "Rename", "Delete", "Settings"],
+  "subMenuItems": ["Twitter", "Instagram", "Dribble", "Telegram"]
+}
