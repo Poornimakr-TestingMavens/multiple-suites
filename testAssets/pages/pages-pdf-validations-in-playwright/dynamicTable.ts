@@ -2,12 +2,14 @@ import { Page, Locator } from "@playwright/test";
 import fs from "fs";
 import path from "path";
 import { PDFParse } from "pdf-parse";
+import { DownloadHelper } from "../../../helpers/downloadFile";
 
 /**
  * Page Object for Dynamic Table Export feature.
  */
 export default class DynamicTableExportPage {
   readonly page: Page;
+  readonly downloadHelper: DownloadHelper;
   readonly dynamicTableLink: Locator;
   readonly nameInput: Locator;
   readonly categoryInput: Locator;
@@ -17,11 +19,10 @@ export default class DynamicTableExportPage {
   readonly excelExportButton: Locator;
   readonly pdfExportLink: Locator;
 
-  /**
-   * @param {Page} page - Playwright page object.
-   */
   constructor(page: Page) {
     this.page = page;
+    this.downloadHelper = new DownloadHelper(page);
+
     this.dynamicTableLink = page.locator('//a[@href="/components/dynamic-table-export"]');
     this.nameInput = page.locator('//input[@placeholder="Name"]');
     this.categoryInput = page.locator('//input[@placeholder="Category"]');
@@ -32,23 +33,11 @@ export default class DynamicTableExportPage {
     this.pdfExportLink = page.locator('//a[text()="📋 Export to PDF"]');
   }
 
-  /**
-   * Navigates to the Dynamic Table Export page.
-   * @returns {Promise<void>}
-   */
   async navigate(): Promise<void> {
     await this.page.goto("https://www.playground.testingmavens.tools/components");
     await this.dynamicTableLink.click();
   }
 
-  /**
-   * Adds a new row to the table.
-   * @param {string} name - Product name.
-   * @param {string} category - Product category.
-   * @param {string} price - Product price.
-   * @param {string} stock - Product stock quantity.
-   * @returns {Promise<void>}
-   */
   async addRow(name: string, category: string, price: string, stock: string): Promise<void> {
     await this.nameInput.fill(name);
     await this.categoryInput.fill(category);
@@ -58,39 +47,27 @@ export default class DynamicTableExportPage {
   }
 
   /**
-   * Exports the table to Excel and saves the file.
-   * @param {string} savePath - Directory to save the exported Excel.
-   * @returns {Promise<string>} Path of the saved Excel file.
+   * Exports the table to Excel using DownloadHelper.
+   * @param fileName Name for the Excel file
+   * @returns Absolute path of the saved Excel file
    */
-  async exportToExcel(savePath: string): Promise<string> {
-    const [download] = await Promise.all([
-      this.page.waitForEvent("download"),
-      this.excelExportButton.click()
-    ]);
-    const filePath = path.join(savePath, "exported_table.xlsx");
-    await download.saveAs(filePath);
-    return filePath;
+  async exportToExcel(fileName: string = "exported_table.xlsx"): Promise<string> {
+    return await this.downloadHelper.downloadFile(this.excelExportButton, fileName);
   }
 
   /**
-   * Exports the table to PDF and saves the file.
-   * @param {string} savePath - Directory to save the exported PDF.
-   * @returns {Promise<string>} Path of the saved PDF file.
+   * Exports the table to PDF using DownloadHelper.
+   * @param fileName Name for the PDF file
+   * @returns Absolute path of the saved PDF file
    */
-  async exportToPDF(savePath: string): Promise<string> {
-    const [download] = await Promise.all([
-      this.page.waitForEvent("download"),
-      this.pdfExportLink.click()
-    ]);
-    const filePath = path.join(savePath, "exported_table.pdf");
-    await download.saveAs(filePath);
-    return filePath;
+  async exportToPDF(fileName: string = "exported_table.pdf"): Promise<string> {
+    return await this.downloadHelper.downloadFile(this.pdfExportLink, fileName);
   }
 
   /**
-   * Extracts and returns the text content from a PDF file.
-   * @param {string} pdfPath - Path of the exported PDF.
-   * @returns {Promise<string>} Text content of the PDF.
+   * Extracts text content from a PDF file.
+   * @param pdfPath Path to the PDF file
+   * @returns Text content of the PDF
    */
   async extractPDFText(pdfPath: string): Promise<string> {
     const pdfBuffer = fs.readFileSync(pdfPath);

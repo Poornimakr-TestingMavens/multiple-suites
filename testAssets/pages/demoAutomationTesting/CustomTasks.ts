@@ -1,7 +1,6 @@
 import { Locator, Page, expect } from "@playwright/test";
 import fs from "fs";
 import path from "path";
-import { PdfReader } from "pdfreader";
 import { UploadHelper } from "../../../helpers/uploadFile";
 import { DownloadHelper } from "../../../helpers/downloadFile";
 

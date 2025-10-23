@@ -3,8 +3,6 @@ import custom from "./demoAutomationTesting/CustomTasks";
 import playg from "./qaPlayGround/Qaplaytasks";
 import scre from "./screenerApp/screenerPage";
 import Playgcolour from "./tmPlayGround/playGroundCol";
-import DynamicTableExportPDFPage from "./tmPlayGround/DynamicTableExportPDFPage";
-import StaticTablePDFPage from "./tmPlayGround/StaticTablePDFPage";
 import StaticTablePage from "./tmPlayGround/staticPage";
 import DynamicTableExportPage from "./tmPlayGround/dynamicPage";
 import fs from "fs";
@@ -16,8 +14,7 @@ type MyFixtures = {
   playg: playg;
   scre: scre;
   playgco:Playgcolour
-  pdfPage:DynamicTableExportPDFPage
-  pdfPageE:StaticTablePDFPage
+  
   staticTablePage:StaticTablePage
   tablePage:DynamicTableExportPage
 };
@@ -35,14 +32,7 @@ const test = base.extend<MyFixtures>({
   playgco:async({page},use)=>{
     await use(new Playgcolour(page))
   },
-  pdfPage:async({page},use)=>
-  {
-    await use(new DynamicTableExportPDFPage(page))
-  },
-  pdfPageE:async({page},use)=>
-  {
-    await use(new StaticTablePDFPage(page))
-  },
+
   staticTablePage:async({page},use)=>
   {
     await use(new StaticTablePage(page))

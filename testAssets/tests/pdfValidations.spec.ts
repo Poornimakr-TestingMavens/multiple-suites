@@ -9,20 +9,9 @@ test.describe("Playground + Screener Validations", () => {
     XLSX,
     staticTablePage,
   }) => {
-    await test.step("Register on Screener.in and verify email content", async () => {
-      const { found, content } = await registerPage.registerAndCheckEmail();
-      expect(found, "Expected registration email to be found").toBeTruthy();
-      for (const text of testData.screener.expectedTexts) {
-        expect(
-          content,
-          `Expected email content to include "${text}"`
-        ).toContain(text);
-      }
-    });
-
-    await test.step("Add row and verify in exported Excel and PDF", async () => {
-      const downloadDir = testData.downloadDir;
+        await test.step("Add row and verify in exported Excel and PDF", async () => {
       await dynamicTableExport.navigate();
+
       const rowData = testData.dynamicTable.newRow;
       await dynamicTableExport.addRow(
         rowData.name,
@@ -30,16 +19,13 @@ test.describe("Playground + Screener Validations", () => {
         rowData.price,
         rowData.stock
       );
-      const exportedExcel = await dynamicTableExport.exportToExcel(downloadDir);
-      expect(
-        fs.existsSync(exportedExcel),
-        "Excel file should exist"
-      ).toBeTruthy();
+
+      // Export to Excel using DownloadHelper
+      const exportedExcel = await dynamicTableExport.exportToExcel();
+      expect(fs.existsSync(exportedExcel), "Excel file should exist").toBeTruthy();
 
       const workbook = XLSX.readFile(exportedExcel);
-      const sheet = XLSX.utils.sheet_to_json(
-        workbook.Sheets[workbook.SheetNames[0]]
-      );
+      const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
       const addedRow = sheet.find(
         (row: any) =>
           row.name?.toLowerCase() === rowData.name.toLowerCase() &&
@@ -49,7 +35,8 @@ test.describe("Playground + Screener Validations", () => {
       );
       expect(addedRow, "Added row should appear in Excel export").toBeTruthy();
 
-      const exportedPDF = await dynamicTableExport.exportToPDF(downloadDir);
+      // Export to PDF using DownloadHelper
+      const exportedPDF = await dynamicTableExport.exportToPDF();
       expect(fs.existsSync(exportedPDF), "PDF file should exist").toBeTruthy();
 
       const pdfText = await dynamicTableExport.extractPDFText(exportedPDF);
@@ -85,6 +72,16 @@ test.describe("Playground + Screener Validations", () => {
           pdfText,
           "PDF content should include expected employee data"
         ).toContain(expectedText);
+      }
+    });
+    await test.step("Register on Screener.in and verify email content", async () => {
+      const { found, content } = await registerPage.registerAndCheckEmail();
+      expect(found, "Expected registration email to be found").toBeTruthy();
+      for (const text of testData.screener.expectedTexts) {
+        expect(
+          content,
+          `Expected email content to include "${text}"`
+        ).toContain(text);
       }
     });
   });

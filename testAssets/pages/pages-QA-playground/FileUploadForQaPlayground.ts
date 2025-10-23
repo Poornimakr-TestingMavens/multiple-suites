@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from "@playwright/test";
-import { BasePage } from "./basePage";
+import { BasePage } from "../../Pages/pages-QA-playground/basePage";
 
 /**
  * Page Object for handling File Upload operations in QA Playground.

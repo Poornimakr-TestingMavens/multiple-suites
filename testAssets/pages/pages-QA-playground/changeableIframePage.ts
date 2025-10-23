@@ -1,5 +1,6 @@
 import { Locator, Page, FrameLocator } from "@playwright/test";
-import { BasePage } from "./basePage";
+import { BasePage } from "../../Pages/pages-QA-playground/basePage";
+
 
 /**
  * Page Object for Nested Iframe section.

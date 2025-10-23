@@ -1,6 +1,5 @@
 import { Page, Locator } from "@playwright/test";
-import { BasePage } from "./basePage";
-
+import { BasePage } from "../../Pages/pages-QA-playground/basePage";
 /**
  * Page Object Model for the "Right-Click Context Menu" section.
  * Handles navigation, right-click actions, and menu item selection.
