@@ -1,4 +1,4 @@
-import { test, expect,fs,path } from "../Pages/fixture";
+import { test, expect,fs,path } from "../pages/fixture";
 
 test.describe("Dynamic table pdf download and validation", () => {
 test("Add row and validate all table data in exported PDF", async ({

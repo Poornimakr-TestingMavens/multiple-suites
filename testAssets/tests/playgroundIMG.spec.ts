@@ -1,4 +1,4 @@
-import { test, expect } from "../Pages/fixture";
+import { test, expect } from "../pages/fixture";
 
 test.describe("Visual testing and ui testing on playground", () => {
   test("Validate export button colors", async ({ playgco }) => {

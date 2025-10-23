@@ -1,4 +1,4 @@
-import { test, expect } from "../Pages/fixture";
+import { test, expect } from "../pages/fixture";
 import user1 from "../testData/user.json";
 
 test.describe("Validate through email if the user is registered", () => {

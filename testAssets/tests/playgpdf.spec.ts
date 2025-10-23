@@ -1,4 +1,4 @@
-import { test, expect,fs } from "../Pages/fixture";
+import { test, expect,fs } from "../pages/fixture";
 
 
 test.describe("Static Table Export PDF Validations", () => {
