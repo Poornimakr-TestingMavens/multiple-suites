@@ -1,5 +1,5 @@
 import { test, expect } from "../pages/fixture";
-import menuData from "../testData/menuData.json";
+import menuData from "../testdata/menuData.json";
 
 test.describe("QA PLAYGROUND SITE DEMO FUNCTIONALITIES", () => {
   test("Identifying superhero name and checking if the real name is same as expected", async ({

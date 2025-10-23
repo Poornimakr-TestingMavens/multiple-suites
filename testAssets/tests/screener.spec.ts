@@ -1,5 +1,5 @@
 import { test, expect } from "../pages/fixture";
-import user1 from "../testData/user.json";
+import user1 from "../testdata/user.json";
 
 test.describe("Validate through email if the user is registered", () => {
   test("Register and verify email on Screener.in using YOPmail", async ({
