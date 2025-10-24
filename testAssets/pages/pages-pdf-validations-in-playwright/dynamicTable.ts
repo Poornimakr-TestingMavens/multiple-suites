@@ -1,7 +1,7 @@
 import { Page, Locator } from "@playwright/test";
 import fs from "fs";
 import path from "path";
-import { PDFParse } from "pdf-parse";
+const pdf = require("pdf-parse");
 import { DownloadHelper } from "../../../helpers/downloadFile";
 
 /**
@@ -70,10 +70,8 @@ export default class DynamicTableExportPage {
    * @returns Text content of the PDF
    */
   async extractPDFText(pdfPath: string): Promise<string> {
-    const pdfBuffer = fs.readFileSync(pdfPath);
-    const parser = new PDFParse({ data: pdfBuffer });
-    const result = await parser.getText();
-    await parser.destroy();
-    return result.text.replace(/\s+/g, " ").toLowerCase();
-  }
+  const pdfBuffer = fs.readFileSync(pdfPath);
+  const result = await pdf(pdfBuffer); // call directly, no "new"
+  return result.text.replace(/\s+/g, " ").toLowerCase();
+}
 }
