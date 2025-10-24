@@ -17,6 +17,7 @@ export default defineConfig({
  */
  
   testDir: 'testAssets/tests',
+  snapshotDir: './.artifacts/snapshots',
   /* Run tests in files in parallel */
   fullyParallel: true,
  

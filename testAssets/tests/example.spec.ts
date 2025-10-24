@@ -38,7 +38,7 @@ test.describe("File download, upload and drag drop functionalities", () => {
   test("upload, remove and upload a file and verify the status", async ({
     custom,
   }) => {
-    const filePath = "testAssets/testData/downloadtxt/info.txt";
+    const filePath = "testAssets/testData/info.txt";
     await test.step("Launch the website and navigate to Upload page", async () => {
       await custom.launchWebsite();
       await expect(custom.mainHead).toBeVisible();

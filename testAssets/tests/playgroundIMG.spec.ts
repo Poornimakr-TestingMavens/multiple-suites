@@ -22,7 +22,7 @@ test.describe("Visual testing and ui testing on playground", () => {
 
     await test.step("Validate product image using screenshot comparison", async () => {
       await playgco.asyncValidateProd();
-      await expect(playgco.prod1Img1).toHaveScreenshot("DATA/Headset.png");
+      await expect(playgco.prod1Img1).toHaveScreenshot("testdata/Headset.png");
     });
   });
 });
