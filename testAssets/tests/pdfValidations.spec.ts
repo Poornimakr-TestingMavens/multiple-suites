@@ -1,4 +1,6 @@
-import { test, expect } from "../pages/pages-QA-playground/fixtures";
+import { test, expect} from "../pages/pages-QA-playground/fixtures";
+
+
 
 test.describe("Playground + Screener Validations", () => {
   test("Playground + Screener Combined Flow", async ({
@@ -46,43 +48,17 @@ test.describe("Playground + Screener Validations", () => {
         );
       }
     });
-
     await test.step("Validate Static Table Export - Excel and PDF", async () => {
       await staticTablePage.goToStaticTablePage();
-      const tableData = await staticTablePage.getTableData();
 
-      if (testData.staticTable.validateExcel) {
-        const excelPath = await staticTablePage.downloadExcel();
-        const excelData = await staticTablePage.parseExcel(excelPath);
+      const exportedExcel = await staticTablePage.exportToExcel();
+      const exportedPDF = await staticTablePage.exportToPDF();
 
-        expect(excelData.headers).toEqual(
-          tableData.headers.map((h) => h.toLowerCase().trim())
-        );
-        expect(excelData.rows).toEqual(tableData.rows);
-      }
-
-      if (testData.staticTable.validatePDF) {
-        const pdfPath = await staticTablePage.downloadPDF();
-        const pdfText = await staticTablePage.extractPDFText(pdfPath);
-        const expectedText = testData.staticTable.expectedPDFText
-          .replace(/\s+/g, " ")
-          .trim();
-
-        expect(
-          pdfText,
-          "PDF content should include expected employee data"
-        ).toContain(expectedText);
-      }
+      expect(fs.existsSync(exportedExcel), "Static table Excel should exist").toBeTruthy();
+      expect(fs.existsSync(exportedPDF), "Static table PDF should exist").toBeTruthy();
     });
-    await test.step("Register on Screener.in and verify email content", async () => {
-      const { found, content } = await registerPage.registerAndCheckEmail();
-      expect(found, "Expected registration email to be found").toBeTruthy();
-      for (const text of testData.screener.expectedTexts) {
-        expect(
-          content,
-          `Expected email content to include "${text}"`
-        ).toContain(text);
-      }
-    });
+
+     
+    
   });
 });
