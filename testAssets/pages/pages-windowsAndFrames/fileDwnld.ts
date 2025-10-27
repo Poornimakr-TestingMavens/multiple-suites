@@ -1,12 +1,12 @@
 import { Page, Locator } from "@playwright/test";
 import path from "path";
 import fs from "fs";
-
+import { CommonPage } from "./commonPage";
 /**
  * Page Object Model for the "File Download" component.
  * Handles navigation, text input, file creation, download, and file verification operations.
  */
-export class FileDownloadPage {
+export class FileDownloadPage extends CommonPage {
   readonly page: Page;
   readonly moreLink: Locator;
   readonly fileDownloadLink: Locator;
@@ -19,6 +19,7 @@ export class FileDownloadPage {
    * @param page - The Playwright Page instance representing the current browser page.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.moreLink = page.locator('//a[text()="More"]');
     this.fileDownloadLink = page.locator('//a[text()="File Download"]');

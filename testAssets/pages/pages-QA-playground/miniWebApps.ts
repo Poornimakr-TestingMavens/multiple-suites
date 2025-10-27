@@ -1,10 +1,10 @@
 import { Page, Locator } from "@playwright/test";
-
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 /**
  * Page Object Model for the Dynamic Table component.
  * Handles interactions and data retrieval for the dynamic table page.
  */
-export class DynamicTablePage {
+export class DynamicTablePage extends BasePage {
   readonly page: Page;
   readonly dynamicTableLink: Locator;
   readonly superheroHeader: Locator;
@@ -14,6 +14,7 @@ export class DynamicTablePage {
    * @param {Page} page - The Playwright Page instance used to interact with the browser.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.dynamicTableLink = page.locator('//h3[text()="Dynamic Table"]');
     this.superheroHeader = page.locator("text=SUPERHERO");

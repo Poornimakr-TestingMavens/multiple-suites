@@ -1,10 +1,11 @@
 import { Page, Locator } from "@playwright/test";
+import { CommonPage } from "./commonPage";
 
 /**
  * Page Object Model for the "Drag and Drop" component of the Automation Demo Site.
  * Handles navigation to the Drag and Drop section and dragging images to the target area.
  */
-export class DragAndDropPage {
+export class DragAndDropPage extends CommonPage {
   /** Playwright Page instance */
   readonly page: Page;
 
@@ -43,6 +44,7 @@ export class DragAndDropPage {
    * @param page - Playwright Page instance representing the current browser page.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.interactionsLink = page.locator('//a[text()="Interactions "]');
     this.dragAndDropLink = page.locator('//a[text()="Drag and Drop "]');

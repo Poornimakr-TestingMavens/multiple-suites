@@ -1,11 +1,11 @@
 import { Page, Locator } from "@playwright/test";
 import path from "path";
-
+import { CommonPage } from "./commonPage";
 /**
  * Page Object Model for the "File Upload" component.
  * Handles navigation, file selection, upload verification, and file removal operations.
  */
-export class FileUploadPage {
+export class FileUploadPage extends CommonPage {
   readonly page: Page;
   readonly moreLink: Locator;
   readonly fileUploadLink: Locator;
@@ -19,6 +19,7 @@ export class FileUploadPage {
    * @param page - The Playwright Page instance representing the current browser page.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.moreLink = page.locator('//a[text()="More"]');
     this.fileUploadLink = page.locator('//a[text()="File Upload"]');

@@ -1,10 +1,11 @@
 import { Page, Locator } from "@playwright/test";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 
 /**
  * Page Object Model for the "Sortable List" component.
  * Handles interactions with the list items, including drag-and-drop and order validation.
  */
-export class SortableListPage {
+export class SortableListPage extends BasePage {
   readonly page: Page;
   readonly header: Locator;
   readonly peopleList: Locator;
@@ -16,6 +17,7 @@ export class SortableListPage {
    * @param page - The Playwright Page instance representing the current browser page.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.header = page.locator('//h3[text()="Sortable List"]');
     this.peopleList = page.locator("#draggable-list li");

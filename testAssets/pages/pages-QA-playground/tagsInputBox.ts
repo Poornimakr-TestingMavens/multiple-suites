@@ -1,10 +1,11 @@
 import { Page, Locator, expect } from "@playwright/test";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 
 /**
  * Page Object Model for the "Tags Input Box" component.
  * Handles navigation, adding, retrieving, and removing tags in the input box.
  */
-export class TagsInputPage {
+export class TagsInputPage extends BasePage {
   readonly page: Page;
   readonly tagsInputLink: Locator;
   readonly inputField: Locator;
@@ -16,6 +17,7 @@ export class TagsInputPage {
    * @param page - The Playwright Page instance representing the current browser page.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.tagsInputLink = page.locator('//h3[text()="Tags Input Box"]');
     this.inputField = page.locator('//input[@type="text"]');

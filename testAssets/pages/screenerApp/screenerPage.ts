@@ -1,6 +1,7 @@
 import { Page, Locator, expect, BrowserContext } from "@playwright/test";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 
-export default class ScreenerTask {
+export default class ScreenerTask extends BasePage {
   readonly page: Page;
   readonly registerPage: Locator;
   readonly emailReg: Locator;
@@ -9,6 +10,7 @@ export default class ScreenerTask {
   readonly regButton: Locator;
 
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.registerPage = page.locator('//a[text()="Get free account"]');
     this.emailReg = page.locator('//input[@name="email"]');

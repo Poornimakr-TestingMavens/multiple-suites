@@ -2,12 +2,13 @@ import { Page, expect } from "@playwright/test";
 import path from "path";
 import * as XLSX from "xlsx";
 import { DownloadHelper } from "../../../helpers/downloadFile";
+import { BasePage } from "../pages-QA-playground/basePage";
 
 /**
  * Handles operations related to the Static Table Export page,
  * including navigation, table data extraction, Excel export, and validation.
  */
-export default class StaticTablePage {
+export default class StaticTablePage extends BasePage {
   readonly page: Page;
   private downloadHelper: DownloadHelper;
 
@@ -15,6 +16,7 @@ export default class StaticTablePage {
  // artifactsDir = path.resolve(process.cwd(), ".artifacts/downloads");
 
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.downloadHelper = new DownloadHelper(page);
   }

@@ -1,8 +1,9 @@
 import { expect, Locator } from "@playwright/test";
 import { Page } from "@playwright/test";
 import * as fs from "fs";
+import { BasePage } from "./basePage";
 
-export default class DynamicTableExportPage {
+export default class DynamicTableExportPage extends BasePage {
   readonly page: Page;
   readonly nameInp: Locator;
   readonly categoryInp: Locator;
@@ -11,6 +12,7 @@ export default class DynamicTableExportPage {
   readonly addButton: Locator;
   readonly excelButton: Locator;
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.nameInp = page.locator('//input[@placeholder="Name"]');
     this.categoryInp = page.locator('//input[@placeholder="Category"]');

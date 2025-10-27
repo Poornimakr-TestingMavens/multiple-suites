@@ -1,11 +1,12 @@
 import { Page, Locator } from "@playwright/test";
 import redirectData from "../../testdata/test-data-for-playground/redirectChain.json";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 
 /**
  * Page Object for Redirect Chain page
  * Uses test data for all dynamic values (no hardcoded strings)
  */
-export class RedirectChainPage {
+export class RedirectChainPage extends BasePage {
   readonly page: Page;
   readonly redirectSection: Locator;
   readonly startChainButton: Locator;
@@ -15,6 +16,7 @@ export class RedirectChainPage {
   readonly lastPageText: string;
 
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.redirectPages = redirectData.redirectPages;
     this.lastPageText = redirectData.lastPageText;

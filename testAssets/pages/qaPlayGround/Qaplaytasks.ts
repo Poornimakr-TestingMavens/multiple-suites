@@ -3,7 +3,8 @@ import { SrvRecord } from "dns";
 import path from "path";
 import fs from "fs";
 import { UploadHelper } from "../../../helpers/uploadFile";
-export default class Playground {
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
+export default class Playground extends BasePage {
   // Page reference
   readonly page: Page;
   private uploadHelper: UploadHelper;
@@ -86,6 +87,7 @@ export default class Playground {
   readonly messageLocators: Locator[];
   readonly goBackButton: Locator;
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.uploadHelper = new UploadHelper(page);
 

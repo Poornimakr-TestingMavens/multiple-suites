@@ -1,10 +1,11 @@
 import { Page, Locator, expect } from "@playwright/test";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 
 /**
  * Page Object Model for the Shadow DOM component.
  * Handles interactions with elements inside the Shadow DOM structure.
  */
-export class ShadowDOMPage {
+export class ShadowDOMPage extends BasePage {
   readonly page: Page;
   readonly shadowDomLink: Locator;
   readonly progressBar: Locator;
@@ -13,6 +14,7 @@ export class ShadowDOMPage {
    * @param page - The Playwright Page instance representing the current browser page.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.shadowDomLink = page.locator('//h3[text()="Shadow DOM"]');
     this.progressBar = page.locator("progress-bar");

@@ -18,7 +18,6 @@ import { AlertPage } from "../pages-windowsAndFrames/alertPage";
 import { FileDownloadPage } from "../pages-windowsAndFrames/fileDwnld";
 import { DragAndDropPage } from "../pages-windowsAndFrames/dragAndDrop";
 import { FileUploadPage } from "../pages-windowsAndFrames/fileUpload";
-import { ProductPage } from "../pages-pdf-validations-in-playwright/productPage";
 import { FileUploadForQaPlayground } from "./FileUploadForQaPlayground";
 
 import ShopPage from "../pages-pdf-validations-in-playwright/shopPage";
@@ -55,7 +54,7 @@ type MyFixtures = {
     // --- PDF Pages ---
 
   shopPage: ShopPage;
-  productPage: ProductPage;
+
 
 
 
@@ -133,7 +132,7 @@ export const test = base.extend<MyFixtures>({
   VERIFY_ACCOUNT_CODE_POSITIVE: async ({}, use) => await use("999999"),
   VERIFY_ACCOUNT_CODE_NEGATIVE: async ({}, use) => await use("111111"),
   shopPage: async ({ page }, use) => await use(new ShopPage(page)),
-  productPage: async ({ page }, use) => await use(new ProductPage(page)),
+
 });
 
 export { expect };

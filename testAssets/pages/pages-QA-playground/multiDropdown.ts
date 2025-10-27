@@ -1,10 +1,11 @@
 import { Page, Locator, expect } from "@playwright/test";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 
 /**
  * Page Object Model for the Multi-Level Dropdown application.
  * Handles navigation, validation, and interaction with dropdown menus and their nested options.
  */
-export class MultiDropdownPage {
+export class MultiDropdownPage extends BasePage {
   readonly page: Page;
   readonly appLink: Locator;
   readonly dropdownIcon: Locator;
@@ -19,6 +20,7 @@ export class MultiDropdownPage {
    * @param {Page} page - The Playwright Page instance used to control the browser.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.appLink = page.locator('//h3[text()="Multi Level Dropdown"]');
     this.dropdownIcon = page.locator(

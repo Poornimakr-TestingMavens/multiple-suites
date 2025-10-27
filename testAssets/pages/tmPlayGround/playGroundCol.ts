@@ -1,6 +1,7 @@
 import { Locator, Page, expect } from "@playwright/test";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 
-export default class Playgcolour {
+export default class Playgcolour extends BasePage {
   readonly page: Page;
   readonly prod1: Locator;
   readonly prod1Img1: Locator;
@@ -11,6 +12,7 @@ export default class Playgcolour {
    * @param {Page} page - Playwright Page instance used to control browser actions.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     // Locator for the specific product header
     this.prod1 = this.page.locator('//h2[text()="SteelSeries Arctis 9"]');

@@ -1,4 +1,6 @@
 import { Page, Locator } from "@playwright/test";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
+
 
 /**
  * Page Object Model for the Miscellaneous Apps page.
@@ -7,7 +9,7 @@ import { Page, Locator } from "@playwright/test";
  * - Onboarding Modal Popup
  * - Right-Click Context Menu
  */
-export class MiscAppsPage {
+export class MiscAppsPage extends BasePage {
   readonly page: Page;
 
   readonly coveredElementsLink: Locator;
@@ -31,7 +33,10 @@ export class MiscAppsPage {
    * @param {Page} page - The Playwright Page instance used for browser interactions.
    */
   constructor(page: Page) {
+    super(page);
+    
     this.page = page;
+
 
     // Covered Elements
     this.coveredElementsLink = page.locator('//h3[text()="Covered Elements"]');

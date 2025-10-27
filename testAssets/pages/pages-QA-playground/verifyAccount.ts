@@ -1,10 +1,11 @@
 import { Page, Locator, expect } from "@playwright/test";
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 
 /**
  * Page Object Model for the "Verify Your Account" section.
  * Handles navigation to the verify account page, entering verification codes, and checking success messages.
  */
-export class VerifyAccountPage {
+export class VerifyAccountPage extends BasePage {
   readonly page: Page;
   readonly heading: Locator;
   readonly codeFields: Locator;
@@ -16,6 +17,7 @@ export class VerifyAccountPage {
    * @param page - The Playwright Page instance representing the current browser page.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.heading = page.locator('h2:text("Verify Your Account")');
     this.codeFields = page.locator(".code"); 

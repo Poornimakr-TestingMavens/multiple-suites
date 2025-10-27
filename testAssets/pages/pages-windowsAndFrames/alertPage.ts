@@ -1,10 +1,11 @@
 import { Page, expect, Locator } from "@playwright/test";
+import { CommonPage } from "./commonPage";
 
 /**
  * Page Object Model for handling various types of alerts on the Alerts page.
  * Supports alert with OK, alert with OK & Cancel, and prompt alerts.
  */
-export class AlertPage {
+export class AlertPage extends CommonPage {
   readonly page: Page;
   readonly switchToButton: Locator;
   readonly alertsButton: Locator;
@@ -20,6 +21,7 @@ export class AlertPage {
    * @param page - The Playwright Page instance representing the current browser page.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.switchToButton = page.locator('//a[text()="SwitchTo"]');
     this.alertsButton = page.locator('//a[text()="Alerts"]');

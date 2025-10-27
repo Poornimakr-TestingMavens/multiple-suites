@@ -1,10 +1,10 @@
 import { test, expect, Page, Locator } from "@playwright/test";
 import { NEW_TAB_PAGE_URL, NEW_TAB_PAGE_HEADER } from "../../../utils/urls";
-
+import { BasePage } from "../../pages/pages-QA-playground/basePage";
 /**
  * Page Object Model for handling the "New Tab" page and related actions.
  */
-class NewTabPage {
+class NewTabPage extends BasePage {
   readonly page: Page;
   readonly header: Locator;
   readonly openLink: Locator;
@@ -16,6 +16,7 @@ class NewTabPage {
    * @param page Playwright Page instance representing the current browser context.
    */
   constructor(page: Page) {
+    super(page);
     this.page = page;
     this.header = page.locator('//h3[text()="New Tab"]');
     this.openLink = page.locator('//a[text()="Open New Tab"]');
