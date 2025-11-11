@@ -32,7 +32,7 @@ export default defineConfig({
  ['html', { open: 'always' }],
     ['list'],
     ['allure-playwright', {
-      outputFolder: './.artifacts/allure-results',
+      outputFolder: '.artifacts/allure-results',
       detail: false,
       suiteTitle: false,
       useCucumberStepReporter: false,
@@ -48,7 +48,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'on', // Attach screenshots automatically
     video: 'on',
-    headless: true
+    headless: true,
   },
  
   /* Configure projects for major browsers */
