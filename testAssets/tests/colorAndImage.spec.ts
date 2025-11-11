@@ -1,7 +1,7 @@
 import { test, expect } from "../pages/pages-QA-playground/fixtures";
 
 test.describe("Dynamic Table Export - Button Color Validations", () => {
-  test("Verify button colors", async ({ shopPage, testData }) => {
+  test.only("Verify button colors", async ({ shopPage, testData }) => {
     const colorMap = testData.dynamicTable.buttonColors;
 
     await test.step("Navigate to Dynamic Table Export page", async () => {

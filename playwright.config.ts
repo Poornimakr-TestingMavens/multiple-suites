@@ -32,7 +32,7 @@ export default defineConfig({
  ['html', { open: 'always' }],
     ['list'],
     ['allure-playwright', {
-      outputFolder: '.artifacts/allure-results',
+      outputFolder: 'allure-results',
       detail: false,
       suiteTitle: false,
       useCucumberStepReporter: false,
