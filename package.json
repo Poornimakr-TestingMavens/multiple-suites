@@ -2,16 +2,25 @@
   "name": "practicetestingtasknew",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  
+  "scripts": {
+    "suite:A": "npx playwright test tests/colorAndImage.spec.ts --project=chromium",
+    "suite:B": "npx playwright test tests/playgrounddoc.spec.ts --project=chromium",
+    "suite:C": "npx playwright test tests/miniWebApps.spec.ts tests/playgroundIMG.spec.ts --project=chromium",
+    "suite:D": "npx playwright test tests/windowsandframes.spec.ts --project=chromium"
+  },
+
+
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.56.0",
+    "@playwright/test": "^1.56.1",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^24.7.0",
-    "allure-playwright": "^3.4.1",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.2",
     "allure-single-html-file-js": "^0.0.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
