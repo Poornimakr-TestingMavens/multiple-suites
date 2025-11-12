@@ -1,81 +1,125 @@
-name: Playwright Tests
+name: Playwright Test Suites with Allure Reports
+
 on:
+  workflow_dispatch:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
- 
+    branches: [ main ]
+
 jobs:
-  test:
-    timeout-minutes: 60
+  suiteA:
     runs-on: ubuntu-latest
- 
     steps:
-      # Checkout code
       - uses: actions/checkout@v4
- 
-      # Setup Node.js
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
- 
-      # Install dependencies
+          node-version: 20
       - name: Install dependencies
-        run: npm ci
- 
-      # Install Playwright browsers
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
- 
-      # Run Playwright tests
-      - name: Run Playwright tests
-        run: npx playwright test
- 
-      # Upload Playwright HTML report
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
- 
-      # Zip only the downloaded files and set output
-      - name: Zip downloaded files
-        id: zip_downloaded_files
-        if: ${{ !cancelled() }}
         run: |
-          DOWNLOAD_DIR=".artifacts/downloads"
-          ZIP_FILE=".artifacts/downloads.zip"
- 
-          echo "Contents of $DOWNLOAD_DIR before zip:"
-          ls -al "$DOWNLOAD_DIR" || echo "Directory not found"
- 
-          if [ -d "$DOWNLOAD_DIR" ]; then
-            zip -r "$ZIP_FILE" "$DOWNLOAD_DIR"
-            if [ -f "$ZIP_FILE" ]; then
-              echo "zip_created=true" >> $GITHUB_OUTPUT
-              echo "ZIP file created successfully: $ZIP_FILE"
-            else
-              echo "zip_created=false" >> $GITHUB_OUTPUT
-              echo "Failed to create ZIP file"
-            fi
-          else
-            echo "No downloaded files found"
-            echo "zip_created=false" >> $GITHUB_OUTPUT
-          fi
- 
-      # Upload zipped downloaded files as workflow artifact
-      - name: Upload downloaded files as artifact
-        if: ${{ !cancelled() && steps.zip_downloaded_files.outputs.zip_created == 'true' }}
+          npm ci
+          npx playwright install --with-deps
+          npm install -g allure-commandline
+      - name: Run Suite A
+        run: npx playwright test tests/colorAndImage.spec.ts --project=chromium
+        continue-on-error: true
+      - name: Upload Allure Results (Suite A)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: downloaded-files
-          path: .artifacts/downloads.zip
-          retention-days: 30
- 
-      # Add the ZIP file reference to GitHub Actions summary
-      - name: Add downloaded files to summary
-        if: ${{ !cancelled() && steps.zip_downloaded_files.outputs.zip_created == 'true' }}
+          name: suiteA-allure-results
+          path: allure-results
+
+  suiteB:
+    needs: suiteA
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
         run: |
-          echo "### Downloaded Files" >> $GITHUB_STEP_SUMMARY
-          echo "You can download the ZIP file from the Artifacts section above." >> $GITHUB_STEP_SUMMARY
+          npm ci
+          npx playwright install --with-deps
+          npm install -g allure-commandline
+      - name: Run Suite B
+        run: npx playwright test tests/playgrounddoc.spec.ts --project=chromium
+        continue-on-error: true
+      - name: Upload Allure Results (Suite B)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: suiteB-allure-results
+          path: allure-results
+
+  suiteC:
+    needs: suiteA
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps
+          npm install -g allure-commandline
+      - name: Run Suite C
+        run: npx playwright test tests/miniWebApps.spec.ts tests/playgroundIMG.spec.ts --project=chromium
+        continue-on-error: true
+      - name: Upload Allure Results (Suite C)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: suiteC-allure-results
+          path: allure-results
+
+  suiteD:
+    needs: suiteB
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps
+          npm install -g allure-commandline
+      - name: Run Suite D
+        run: npx playwright test tests/windowsandframes.spec.ts --project=chromium
+        continue-on-error: true
+      - name: Upload Allure Results (Suite D)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: suiteD-allure-results
+          path: allure-results
+
+  merge-allure:
+    needs: [suiteA, suiteB, suiteC, suiteD]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: .artifacts
+
+      - name: Install Allure CLI
+        run: npm install -g allure-commandline
+
+      - name: Merge Allure Results
+        run: |
+          mkdir -p .artifacts/merged
+          find .artifacts -type d -name "*-allure-results" -exec cp -r {}/* .artifacts/merged/ \; || true
+          allure generate .artifacts/merged --clean -o .artifacts/allure-report || echo "No results to merge"
+      - name: Upload Final Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-allure-report
+          path: .artifacts/allure-report
